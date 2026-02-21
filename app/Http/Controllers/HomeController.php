@@ -35,9 +35,9 @@ class HomeController extends Controller
         return view('projects.index', compact('projects'));
     }
     
-    public function showProject(Project $project)
-    {
-        return view('projects.show', compact('project'));
-    }
+public function showProject(Project $project)
+{
+    return view('projects.show', compact('project')); // <-- PASTIKAN INI 'show' BUKAN 'index'
+}
 }
 

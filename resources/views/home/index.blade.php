@@ -4,17 +4,17 @@
 
 @section('content')
 <!-- Hero Section -->
-<section id="home" class="min-h-screen flex items-center bg-gradient-to-br from-white to-blue-50">
+<section id="home" class="min-h-screen flex items-center bg-gradient-to-br from-white to-blue-50 dark:from-gray-900 dark:to-gray-800 dark:to-blue-900/20">
     <div class="container mx-auto px-6 py-20">
         <div class="flex flex-col-reverse md:flex-row items-center justify-between">
             <div class="md:w-1/2 text-center md:text-left" data-aos="fade-right">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4">
-                    Hi, I'm <span class="text-blue-600">Reyno Andrean Wijaksono</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 dark:text-white mb-4">
+                    Hi, I'm <span class="text-blue-600 dark:text-blue-400">Reyno Andrean Wijaksono</span>
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-600 mb-6">
+                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-6">
                     Front-End Developer & UI Designer
                 </p>
-                <p class="text-gray-600 mb-8 max-w-lg mx-auto md:mx-0">
+                <p class="text-gray-600 dark:text-gray-400 mb-8 max-w-lg mx-auto md:mx-0">
                     Siswa SMK PPLG yang passionate dalam menciptakan website modern dan responsif dengan desain yang menarik.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
@@ -53,6 +53,7 @@
         </h2>
         
         <div class="grid md:grid-cols-2 gap-12">
+            <!-- Kolom Kiri -->
             <div data-aos="fade-right">
                 <h3 class="text-2xl font-semibold mb-4">Siapa Saya?</h3>
                 <p class="text-gray-600 mb-4 leading-relaxed">
@@ -71,8 +72,9 @@
                         <p class="text-gray-500 text-sm">Pengalaman Belajar</p>
                     </div>
                 </div>
-            </div>
+            </div> <!-- PENUTUP KOLOM KIRI -->
             
+            <!-- Kolom Kanan (Pendidikan) -->
             <div data-aos="fade-left">
                 <h3 class="text-2xl font-semibold mb-4">Pendidikan</h3>
                 
@@ -84,7 +86,7 @@
                         <div>
                             <h4 class="font-semibold text-lg">SMK - PPLG</h4>
                             <p class="text-blue-600">2023 - Sekarang</p>
-                            <p class="text-gray-600">Mempelajari pengembangan web, mobile, dan desain UI/UX</p>
+                            <p class="text-gray-600">Jurusan Pengembangan Perangkat Lunak dan Gim</p>
                         </div>
                     </div>
                     
@@ -95,100 +97,14 @@
                         <div>
                             <h4 class="font-semibold text-lg">SMP Negeri 1</h4>
                             <p class="text-blue-600">2020 - 2023</p>
-                            <p class="text-gray-600">Aktif dalam ekstrakurikuler komputer dan desain</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex gap-4">
-                        <div class="bg-blue-100 p-3 rounded-lg h-fit">
-                            <i class="fas fa-certificate text-2xl text-blue-600"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-lg">Kursus Online</h4>
-                            <p class="text-blue-600">2023 - Sekarang</p>
-                            <p class="text-gray-600">Dicoding, Udemy, dan W3Schools - Web Development</p>
+                            <p class="text-gray-600">-</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Skills Section -->
-<section id="skills" class="py-20 bg-gray-50">
-    <div class="container mx-auto px-6">
-        <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">
-            My <span class="text-blue-600">Skills</span>
-        </h2>
-        
-        <div class="grid md:grid-cols-2 gap-12">
-            <!-- Front-End Skills -->
-            <div data-aos="fade-right">
-                <h3 class="text-2xl font-semibold mb-6 flex items-center gap-2">
-                    <i class="fas fa-code text-blue-600"></i>
-                    Front-End Development
-                </h3>
-                
-                @foreach($frontendSkills as $skill)
-                <div class="mb-4">
-                    <div class="flex justify-between mb-1">
-                        <span class="font-medium">{{ $skill->name }}</span>
-                        <span>{{ $skill->percentage }}%</span>
-                    </div>
-                    <div class="w-full bg-gray-200 rounded-full h-2.5">
-                        <div class="bg-blue-600 h-2.5 rounded-full" style="width: {{ $skill->percentage }}%"></div>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-            
-            <!-- Design Skills -->
-            <div data-aos="fade-left">
-                <h3 class="text-2xl font-semibold mb-6 flex items-center gap-2">
-                    <i class="fas fa-paint-brush text-purple-600"></i>
-                    UI Design
-                </h3>
-                
-                @foreach($designSkills as $skill)
-                <div class="mb-4">
-                    <div class="flex justify-between mb-1">
-                        <span class="font-medium">{{ $skill->name }}</span>
-                        <span>{{ $skill->percentage }}%</span>
-                    </div>
-                    <div class="w-full bg-gray-200 rounded-full h-2.5">
-                        <div class="bg-purple-600 h-2.5 rounded-full" style="width: {{ $skill->percentage }}%"></div>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-        </div>
-        
-        <!-- Tools -->
-        <div class="mt-12" data-aos="fade-up">
-            <h3 class="text-2xl font-semibold mb-6 text-center">Tools & Technologies</h3>
-            
-            <div class="flex flex-wrap justify-center gap-6">
-                <div class="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition">
-                    <i class="fab fa-figma text-4xl text-purple-600"></i>
-                    <p class="text-sm mt-2">Figma</p>
-                </div>
-                <div class="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition">
-                    <i class="fab fa-git-alt text-4xl text-orange-600"></i>
-                    <p class="text-sm mt-2">Git</p>
-                </div>
-                <div class="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition">
-                    <i class="fab fa-laravel text-4xl text-red-600"></i>
-                    <p class="text-sm mt-2">Laravel</p>
-                </div>
-                <div class="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition">
-                    <i class="fas fa-palette text-4xl text-blue-600"></i>
-                    <p class="text-sm mt-2">Canva</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+            </div> <!-- PENUTUP KOLOM KANAN -->
+        </div> <!-- PENUTUP grid -->
+    </div> <!-- PENUTUP container -->
+</section> <!-- PENUTUP section -->
 
 <!-- Projects Section -->
 <section id="projects" class="py-20 bg-white">

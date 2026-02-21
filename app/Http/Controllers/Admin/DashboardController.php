@@ -19,7 +19,7 @@ class DashboardController extends Controller
             'email' => 'required|email',
             'password' => 'required'
         ]);
-        
+
         // Untuk sementara pakai logic sederhana
         if ($credentials['email'] === 'admin@reyno.com' && $credentials['password'] === 'password123') {
             session(['admin_logged_in' => true]);

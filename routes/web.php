@@ -13,13 +13,15 @@ Route::get('/projects', [HomeController::class, 'allProjects'])->name('projects.
 Route::get('/projects/{project:slug}', [HomeController::class, 'showProject'])->name('projects.show');
 Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
 
-// Admin Routes (dengan middleware auth sederhana)
+// ========== ADMIN ROUTES ==========
 Route::prefix('admin')->name('admin.')->group(function () {
+    
+    // Login routes (TIDAK PAKAI MIDDLEWARE)
     Route::get('/login', [DashboardController::class, 'loginForm'])->name('login');
     Route::post('/login', [DashboardController::class, 'login'])->name('login.post');
     
-    // Routes yang perlu authentication
-    Route::middleware(['auth:web'])->group(function () {
+    // Routes yang butuh login (pake middleware admin)
+    Route::middleware(['admin'])->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
         Route::post('/logout', [DashboardController::class, 'logout'])->name('logout');
         
